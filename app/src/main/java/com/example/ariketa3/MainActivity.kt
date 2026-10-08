@@ -85,19 +85,16 @@ fun AriketaTestua (modifier: Modifier = Modifier) {
 
         Spacer(modifier = Modifier.height(20.dp))
 
-        Button(onClick = { nota++ }) {
-            if (nota >= 10){
-                nota = 10
+        Button(onClick = {
+            if (nota < 10) {
+                nota++
             }
-
-            Text(text = "Gehitu nota")
-        }
+            }) {
+                Text(text = "Gehitu nota")
+            }
 
     }
 }
-
-
-
 
 @Composable
 fun AriketaFondoa (modifier: Modifier = Modifier){
@@ -106,7 +103,7 @@ fun AriketaFondoa (modifier: Modifier = Modifier){
         painter = image,
         contentDescription = null,
         contentScale = ContentScale.Crop,
-        modifier = Modifier.fillMaxSize()
+        modifier = modifier.fillMaxSize()
     )
 }
 
